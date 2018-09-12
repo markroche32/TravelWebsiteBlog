@@ -1,0 +1,48 @@
+
+<div class="signup-form">
+  <div *ngIf="savePostError" class="alert alert-danger fade in">
+      <strong>Error Saving Post!</strong> {{savePostErrorMsg}}
+  </div>
+<form  ngNativeValidate (ngSubmit)="savePost()" class="form-horizontal">
+<div class="col-xs-8 col-xs-offset-4">
+  <h2>Edit Travel Post</h2>
+</div>		
+    <div class="form-group">
+  <label class="control-label col-xs-4">Travel Post Title </label>
+  <div class="col-xs-8">
+            <input type="text" class="form-control" name="title" [(ngModel)]="post.title" required="required">
+        </div>        	
+    </div>
+<div class="form-group">
+  <label class="control-label col-xs-4">Destination</label>
+  <div class="col-xs-8">
+            <input type="text" class="form-control" name="destination" [(ngModel)]="post.destination" required="required">
+        </div>        	
+    </div>
+<div class="form-group">
+  <label for="preview" class="control-label col-xs-4">Image Preview</label>
+  <br/>
+    <div class="col-xs-8">
+      <a href="#">
+        <img class="img-responsive" name="preview" class="preview" src="{{imageURL}}" alt="">
+      </a>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-xs-4">Change Picture</label>
+    <div class="col-xs-8">
+      <input type="file" name="image" (change)="onFileSelected($event)" />
+    </div>        	
+</div>
+<div class="form-group">
+  <label for="experience">Your Experience</label>
+  <textarea class="form-control" name="experience" [(ngModel)]="post.experience" rows="20"></textarea>      	
+</div>
+
+<div class="form-group">
+  <div class="col-xs-8 col-xs-offset-4">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>  
+</div>		      
+</form>
+

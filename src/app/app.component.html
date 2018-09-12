@@ -1,0 +1,11 @@
+
+<app-navigation></app-navigation>
+
+<router-outlet>
+    <span *ngIf="showLoading" class="overlay">
+        <img src="assets/img/loader.gif" alt="Loading" /> <br/>
+        Loading...
+    </span>
+</router-outlet>
+
+<app-footer></app-footer>
