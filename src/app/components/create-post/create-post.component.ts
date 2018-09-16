@@ -54,7 +54,7 @@ export class CreatePostComponent implements OnInit {
         this.postService.savePost(this.post, this.selectedFile).subscribe(
             newPost => { 
             this.newPost = newPost;
-            //this.router.navigate(['/index']);
+            this.router.navigate(['/my-posts']);
           },
           error => {
             console.log(error);
