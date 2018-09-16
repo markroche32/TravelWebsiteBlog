@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2018 at 05:25 PM
+-- Generation Time: Sep 16, 2018 at 07:42 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `imagepath` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `posts`
@@ -53,7 +53,10 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `destination`, `experience`, `ima
 (7, 23, 'Korea Trip', 'Seoul', 'Great Holiday in Seoul   Great Holiday in Seoul  Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul Great Holiday in Seoul ', 'uploads/1534978909976-IMG_2112.JPG'),
 (8, 23, 'japan Trip', 'Kyoto', 'Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto Great Holiday in Kyoto ', 'uploads/1534979026853-IMG_7025.JPG'),
 (9, 23, 'japan Trip 2017', 'Yokohama', 'Great Holiday in yokohama Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in Niigata Great Holiday in yokohama', 'uploads/1536620816681-IMG_6995.JPG'),
-(10, 23, 'Japan 2017', 'Kyoto 2017 ', 'Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto ', 'uploads/1537108525231-SAM_0432.JPG');
+(10, 23, 'Japan 2017', 'Kyoto 2017 ', 'Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto Kyoto ', 'uploads/1537108525231-SAM_0432.JPG'),
+(11, 24, 'Aarohan Italy 2018', 'Italy 2018', 'aarohan Italy aarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaarohan Italyaaroha', 'uploads/1537115404581-SAM_0432.JPG'),
+(12, 24, 'new post', 'new post', 'new postnew postnew postnew postnew postnew postnew post new postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew postnew post', 'uploads/1537116243914-IMG_7012.JPG'),
+(13, 24, 'whatever', 'aarohan', 'wjjls;sla wjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;slawjjls;sla', 'uploads/1537118393952-IMG_7223.JPG');
 
 -- --------------------------------------------------------
 
@@ -68,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`username`),
   UNIQUE KEY `user_id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `users`
@@ -76,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 (4, '1', '$2a$10$f7UvOkg1RIu1WwYOyjnxAut1dbiIpt9qRuLwkGAzKxlhELtfZJDHi', ''),
+(24, 'aarohan', 'aarohan', 'aarohan@aarohan.com'),
 (16, 'bob', 'bob', ''),
 (13, 'giveMePeace', '$2a$10$hyUoJuR/WA8OqlvS5mYFF.nHA6vFJh97et1ewKMfiSeHZfYwAX112', ''),
 (12, 'greatDay', '$2a$10$lkSdxweWz8q56gp3IzfgpuoWzItOxa6drJSQZaB7z4UYXkix2y19G', ''),
@@ -96,7 +100,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 (17, 'tom', 'tom', 'tom@dell.com'),
 (14, 'UseryoYo', 'BobPassword', 'some@man.com'),
 (5, 'uu', '$2a$10$OPgU4SQ0xY3RdrkGKbS3n.LRbk17JmiWUwJf9DkwhM5Ck/AkVidQq', ''),
-(7, 'yo ', '$2a$10$80xuapO0mKgQa1UR5C/YUu/NuydrjardoyXegPuZ701g4ibLsLuT.', '');
+(7, 'yo ', '$2a$10$80xuapO0mKgQa1UR5C/YUu/NuydrjardoyXegPuZ701g4ibLsLuT.', ''),
+(25, 'yoyo', 'yoyo', 'wjjlssla@dell.com');
 
 --
 -- Constraints for dumped tables
