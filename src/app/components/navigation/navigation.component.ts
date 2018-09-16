@@ -53,7 +53,7 @@ export class NavigationComponent implements OnInit {
           console.log(this.headingText);
           break; 
        } 
-       case "/post": {
+       case "/posts": {
           this.headingText = "Problems look mighty small from 150 miles up";
           console.log(this.headingText);
           break;    

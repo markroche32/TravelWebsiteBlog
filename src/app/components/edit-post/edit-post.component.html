@@ -3,6 +3,9 @@
   <div *ngIf="savePostError" class="alert alert-danger fade in">
       <strong>Error Saving Post!</strong> {{savePostErrorMsg}}
   </div>
+  <div *ngIf="savePostSuccess" class="alert alert-success">
+    <strong>Success</strong> Travel Post Successfully Edited 
+</div>
 <form  ngNativeValidate (ngSubmit)="savePost()" class="form-horizontal">
 <div class="col-xs-8 col-xs-offset-4">
   <h2>Edit Travel Post</h2>
@@ -41,6 +44,7 @@
 
 <div class="form-group">
   <div class="col-xs-8 col-xs-offset-4">
+    <button type="button" class="btn btn-warning" [routerLink]="['/my-posts']">Back</button>
     <button type="submit" class="btn btn-primary">Save</button>
   </div>  
 </div>		      

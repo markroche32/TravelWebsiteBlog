@@ -19,6 +19,7 @@ export class EditPostComponent implements OnInit {
   post : any = {};
   selectedFile : File;
   savePostError : boolean = false;
+  savePostSuccess : boolean = false;
   savePostErrorMsg : string;
   serverImgPath : string;
   imageURL : string;
@@ -84,6 +85,7 @@ export class EditPostComponent implements OnInit {
     this.postService.editPostImageNotChanged(this.post).subscribe(
       post => { 
       this.post = post;
+      this.showEditPostSuccessBriefly();
       //this.router.navigate(['/index']);
     },
     error => {
@@ -99,6 +101,7 @@ export class EditPostComponent implements OnInit {
     this.postService.savePost(this.post, this.selectedFile).subscribe(
       post => { 
       this.post = post;
+      this.showEditPostSuccessBriefly();
       //this.router.navigate(['/index']);
     },
     error => {
@@ -106,6 +109,16 @@ export class EditPostComponent implements OnInit {
       this.savePostError = true;
       this.savePostErrorMsg = error;
     });
+  }
+
+  showEditPostSuccessBriefly() : void {
+
+    this.savePostSuccess = true;
+
+    setTimeout(()=> {   
+          this.savePostSuccess = false;
+     }, 5000);
+
   }
 
   convertToPost(post : Post) {

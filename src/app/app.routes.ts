@@ -28,7 +28,7 @@ const routes: Routes = [
 		component: AboutComponent
 	},
 	{
-		path: 'post',
+		path: 'posts',
 		component: SamplepostComponent
 	},
 	{
