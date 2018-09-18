@@ -1,10 +1,21 @@
 <div class="container">
-    <div *ngFor="let post of myPosts" class="row">
+    <div *ngFor="let post of myPosts | slice : startPage:paginationLimit" class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <h2 class="section-heading">{{ post.title }}</h2>
             <blockquote>{{ post.destination }}</blockquote>        
             <img class="img-responsive" id="imageSize" src="{{imageURL}}{{post.imagepath}}" alt="">
-            <p>{{ post.experience }}</p>      
+            <p>{{ post.experience | slice:0:250}}</p>  
+               <div *ngIf="post.experience.length > 250">
+                   <a class="readMore">Read More</a>
+              </div> 
         </div>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <button *ngIf="paginationLimit < myPosts?.length" (click)="showMoreItems()">
+            Show More
+        </button>
+        <button *ngIf="paginationLimit > 3" (click)="showLessItems()">
+            Show Less
+        </button>
     </div>
   </div>

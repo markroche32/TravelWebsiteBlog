@@ -16,11 +16,17 @@ export class SamplepostComponent implements OnInit {
   myPosts : Post[];
   user : User;
   imageURL : string;
+  startPage : Number;
+  paginationLimit:Number; 
 
   constructor(
     private loaderService : LoaderService, 
     private postService: PostsService, 
-    private router: Router) { }
+    private router: Router) {
+
+      this.startPage = 0;
+      this.paginationLimit = 3;
+     }
 
   ngOnInit() {
 
@@ -40,6 +46,15 @@ export class SamplepostComponent implements OnInit {
             this.loaderService.showOverlay(false);
           });
 
+  }
+
+  showMoreItems() : void
+  {
+     this.paginationLimit = Number(this.paginationLimit) + 3;        
+  }
+  showLessItems() : void 
+  {
+    this.paginationLimit = Number(this.paginationLimit) - 3;
   }
 
 }
