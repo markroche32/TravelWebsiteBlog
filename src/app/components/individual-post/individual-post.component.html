@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  
+          <h2 class="section-heading">{{ post.title }}</h2>
+   
+          <blockquote>{{ post.destination }}</blockquote>      
+         
+          <a href="#">
+              <img class="img-responsive" id="imageSize" src="{{imageURL}}" alt="">
+          </a>
+         
+          <p>{{ post.experience }}</p>
+            
+          <button type="button" class="btn btn-warning" [routerLink]="['/posts']">Back</button>
+        
+      </div>
+  </div>
+</div>

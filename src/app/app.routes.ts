@@ -9,6 +9,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { MyPostsComponent } from './components/my-posts/my-posts.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { IndividualPostComponent } from './components/individual-post/individual-post.component';
 
 const routes: Routes = [
 	{
@@ -50,6 +51,10 @@ const routes: Routes = [
 	{
 		path: 'edit-post/:id',
 		component: EditPostComponent
+	},
+	{
+		path: 'individual-post/:id',
+		component: IndividualPostComponent
 	},
 	{
 		path: 'my-posts',

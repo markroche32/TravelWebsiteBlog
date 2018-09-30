@@ -6,7 +6,7 @@
             <img class="img-responsive" id="imageSize" src="{{imageURL}}{{post.imagepath}}" alt="">
             <p>{{ post.experience | slice:0:250}}</p>  
                <div *ngIf="post.experience.length > 250">
-                   <a class="readMore">Read More</a>
+                   <a [routerLink]="['/individual-post', post.id]" class="readMore">Read More</a>
               </div> 
         </div>
     </div>
