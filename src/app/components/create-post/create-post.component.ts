@@ -43,14 +43,14 @@ export class CreatePostComponent implements OnInit {
     }
 
     savePost() : void {
-      
+
       this.model.user_id = this.user.id;
 
       this.post.user_id = this.user.id;
       this.post.title = this.model.title;
       this.post.destination = this.model.destination;
       this.post.experience = this.model.experience;
-     
+
         this.postService.savePost(this.post, this.selectedFile).subscribe(
             newPost => { 
             this.newPost = newPost;

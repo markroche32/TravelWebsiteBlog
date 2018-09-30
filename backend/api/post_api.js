@@ -31,6 +31,11 @@ postRouter.post('/savepost', upload.single('image'), (req, res, next) => {
     var post = JSON.parse(req.body.post)
     post['imagepath'] = 'uploads/' + req.file.filename;
 
+    //YYYY-MM-DD format - add mysql date format
+    let date = new Date();
+    post['created'] = date.toISOString().split("T")[0];
+
+    console.log("post created date = " + post.created);
     console.log("req req.body.post = " + JSON.stringify(post));
     console.log("post title = " + post.title);
 

@@ -6,6 +6,7 @@ export class Post {
         destination : string;
         experience : string;
         imagepath : string;
+        created : Date;
     
       }
       
