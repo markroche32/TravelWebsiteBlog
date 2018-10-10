@@ -43,4 +43,29 @@ export class MyPostsComponent implements OnInit {
       });
 
   }
+
+
+  deletePost(id : number): void {
+
+    console.log("Posts before delete" + this.myPosts.length);
+
+    if (confirm("Are you sure to delete Post")) {
+
+      this.loaderService.showOverlay(true);
+
+      this.postService.deletePost(id).subscribe(
+        response => {
+          this.myPosts = this.myPosts.filter(post => post.id !== id);
+          console.log("Post Successsfully Deleted" + response);
+          console.log("Posts after delete" + this.myPosts.length);
+          this.loaderService.showOverlay(false);
+          }, 
+        error => {
+          console.log(error);
+          this.loaderService.showOverlay(false);
+        });
+
+    }
+  }
+
 }

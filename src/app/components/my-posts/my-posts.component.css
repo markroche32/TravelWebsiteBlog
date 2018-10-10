@@ -1,4 +1,4 @@
-/* #imageSize {
-    width: 800px;
-    height: 400px;
-} */
+#imageSize {
+    min-width: 800px;
+    min-height: 400px;
+}

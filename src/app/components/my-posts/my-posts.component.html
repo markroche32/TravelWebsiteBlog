@@ -13,7 +13,7 @@
           <p>{{ post.experience }}</p>
             
           <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/edit-post', post.id]">Edit Post</button>         
-          <button type="button" class="btn btn-danger btn-sm">Delete Post</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deletePost(post.id)">Delete Post</button>
         
       </div>
   </div>

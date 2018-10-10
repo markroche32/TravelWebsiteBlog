@@ -91,4 +91,17 @@ postRouter.get('/post/(:id)', function (req, res) {
   });
 
 
+  postRouter.delete('/post/(:id)', function (req, res) {
+    
+      var postID = req.params.id;
+      postSQL.deleteByID(postID, function (err, rows, fields) {
+    
+        if (err) throw err;
+        console.log(rows);
+        postSQL.sendResponse(true, res);
+      })
+    
+    });
+
+
 module.exports = postRouter;

@@ -44,7 +44,14 @@ export class PostsService {
     
         return this._http.get("http://localhost:3000/post/" + id)
         .map(res => res.json());
-    
-       }
+         
+    }
+
+    deletePost(id: number) : Observable<any> {
+
+        return this._http.delete("http://localhost:3000/post/" + id)
+            .map(res => res.json());
+             
+    }
     
 }

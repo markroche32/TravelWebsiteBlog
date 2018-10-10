@@ -38,8 +38,8 @@ module.exports.findByID = function(postid, callback) {
 	connection.query("SELECT * FROM posts WHERE id = '" + postid + "'", callback);
 }
 
-module.exports.deleteByID = function(userid, callback) {
-	connection.query("DELETE FROM posts WHERE id = '" + userid + "'", callback);
+module.exports.deleteByID = function(postid, callback) {
+	connection.query("DELETE FROM posts WHERE id = '" + postid + "'", callback);
 }
 
 module.exports.encrypt = function(data, callback) {
