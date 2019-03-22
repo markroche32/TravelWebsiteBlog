@@ -28,6 +28,7 @@ import { MyPostsComponent } from './components/my-posts/my-posts.component';
 import { LoaderService } from './services/loader.service';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { IndividualPostComponent } from './components/individual-post/individual-post.component';
+import { PostsFilterComponent } from './components/posts-filter/posts-filter.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { IndividualPostComponent } from './components/individual-post/individual
     CreatePostComponent,
     MyPostsComponent,
     EditPostComponent,
-    IndividualPostComponent
+    IndividualPostComponent,
+    PostsFilterComponent
   ],
   imports: [
     BrowserModule,
