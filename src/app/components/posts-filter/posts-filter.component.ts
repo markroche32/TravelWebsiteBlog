@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { LoaderService } from '../../services/loader.service';
+import { FilterService } from '../../services/filter.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../../user';
 import { Post } from '../../post';
@@ -12,33 +13,31 @@ import { Post } from '../../post';
 })
 export class PostsFilterComponent implements OnInit {
 
+  continent : any = [];
+  countryData: any;
   myPosts : Post[];
-  //@Input() filter: number;
   imageURL : string;
   user : User;
   selectedFilter:string;
 
-  public filterTypes = [
-      {value:'Asia', display:'Asia', submenu:["China","Japan", "Vietnam"]},
-      {value:'Europe', display:'Europe', submenu:["Ireland","Spain", "Italy"]}, 
-      {value:'America', display:'America', submenu:["USA","Canada", "Hondurus"]}, 
-      {value:'Africa', display:'Africa', submenu:["Ireland","Spain", "Italy"]},
-      {value:'Australia', display:'Australia',submenu:["Australia","New Zealand", "Tazmania"]}
- ];
-  
   constructor(  private loaderService : LoaderService, 
-    private postService: PostsService) { 
+    private postService: PostsService, private filterService : FilterService) { 
 
       this.selectedFilter='Europe';
 
     }
 
-     filterChanged(selectedValue:string){
+     
+    countryChanged(selectedValue:string) {
 
-   
-      console.log('value is ',selectedValue);
+      console.log('country is ', selectedValue);
 
    }
+
+   continentChanged(selectedValue:string) {
+    
+          console.log('continent is ', selectedValue);
+    }
 
   ngOnInit() {
 
@@ -58,6 +57,42 @@ export class PostsFilterComponent implements OnInit {
             console.log(error);
             this.loaderService.showOverlay(false);
           });
+
+          this.filterService.getCountries().subscribe(
+
+            data => { 
+              console.log(data);
+              this.filterCountries(data);
+            },
+            error => console.log(error)
+          )
+
   }
 
+  filterCountries(inputs) : void {
+
+    this.countryData = inputs.map((country) => {
+      return  {
+          name: country.name,
+          code : country.alpha3Code,
+          continent : country.region,
+          capital : country.capital
+        }
+    });
+
+    this.uniqueContinent(this.countryData)
+  }
+
+
+  uniqueContinent(country) : void {
+
+    country.forEach(element => {
+         
+      if(element.continent){
+      
+        this.continent.includes(element.continent) ? null : this.continent.push(element.continent);
+      }
+    });
+
+  }
 }

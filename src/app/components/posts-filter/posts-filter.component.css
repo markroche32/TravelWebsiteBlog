@@ -1,5 +1,5 @@
-ul li :hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-  }
+.filter {
+    font-size: 14px;
+    font-weight: bold;
+    color:black;
+} 

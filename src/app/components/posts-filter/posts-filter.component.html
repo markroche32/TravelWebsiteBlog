@@ -1,11 +1,21 @@
 <div class="row">
     <div class="col-sm-2">
         <div class="form-group">
-            <label for="filter">Travel Post Filter</label>
-            <select name="filter" class="form-control" (change)="filterChanged($event.target.value)">
-                <option *ngFor="let type of filterTypes" [value]="type.value">{{type.display}} 
-                                     
+            <label class="filter" for="filter">Filter By Country</label>
+            <select name="filter" class="form-control" (change)="countryChanged($event.target.value)">
+                <option *ngFor="let country of countryData" [value]="country.name">{{country.name}}
+
                 </option>
             </select>
         </div>
     </div>
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label class="filter" for="filter">Filter By Continent</label>
+            <select name="filter" class="form-control" (change)="continentChanged($event.target.value)">
+                <option *ngFor="let region of continent" [value]="region">{{region}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { AboutComponent } from './components/about/about.component';
 
 import { UserService } from './services/user.service';
 import { SignupService } from './services/signup.service';
+import { FilterService } from './services/filter.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/Observable';
@@ -55,7 +56,7 @@ import { PostsFilterComponent } from './components/posts-filter/posts-filter.com
     HttpModule,
     routing
   ],
-  providers: [UserService, SignupService, PostsService, LoaderService],
+  providers: [UserService, SignupService, PostsService, LoaderService, FilterService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
