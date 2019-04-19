@@ -39,7 +39,7 @@ export class PostsFilterComponent implements OnInit {
           console.log('continent is ', selectedValue);
     }
 
-  ngOnInit() {
+   ngOnInit() {
 
     this.loaderService.showOverlay(true);
     
@@ -59,31 +59,21 @@ export class PostsFilterComponent implements OnInit {
           });
 
           this.filterService.getCountries().subscribe(
-
-            data => { 
-              console.log(data);
-              this.filterCountries(data);
-            },
-            error => console.log(error)
-          )
-
+      
+            data => {
+            console.log(data);
+            this.countryData = data;
+            this.uniqueContinent(data);
+          },
+          error => {
+          console.log(error);
+          this.loaderService.showOverlay(false);
+   
+          });  
+        
   }
 
-  filterCountries(inputs) : void {
-
-    this.countryData = inputs.map((country) => {
-      return  {
-          name: country.name,
-          code : country.alpha3Code,
-          continent : country.region,
-          capital : country.capital
-        }
-    });
-
-    this.uniqueContinent(this.countryData)
-  }
-
-
+  
   uniqueContinent(country) : void {
 
     country.forEach(element => {

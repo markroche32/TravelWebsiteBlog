@@ -13,12 +13,20 @@ export class FilterService {
 
   }
 
-
+  
   getCountries() : Observable<any> {
 
     return this._http.get("https://restcountries.eu/rest/v2/all")
-    .map(res => res.json());
-       
+    .map(res => 
+
+        res.json().map(country => {
+          return  {
+              name: country.name,
+              code : country.alpha3Code,
+              continent : country.region,
+              capital : country.capital
+            }
+      }));
   }
 
   getContinent() : Observable<any> {
@@ -26,6 +34,7 @@ export class FilterService {
     return this._http.get("https://restcountries.eu/rest/v2/all")
     .map(res => res.json());
   }
+
 
 }
 

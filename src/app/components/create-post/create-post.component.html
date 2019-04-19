@@ -1,3 +1,4 @@
+
 <div class="signup-form">
   <div *ngIf="savePostError" class="alert alert-danger fade in">
       <strong>Error Saving Post!</strong> {{savePostErrorMsg}}
@@ -18,6 +19,40 @@
             <input type="text" class="form-control" name="destination" [(ngModel)]="model.destination" #destination="ngModel" required="required">
         </div>        	
     </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-xs-4">Continent</label>
+      <div class="col-xs-8">
+        <select name="filter" class="form-control"  [(ngModel)]="model.continentGlob" #continentGlob="ngModel" required="required">
+          <option *ngFor="let region of continent" [value]="region">{{region}}
+          </option>
+        </select>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="control-label col-xs-4">Country</label>
+      <div class="col-xs-8">
+        <select name="filter" class="form-control" [(ngModel)]="model.country" #country="ngModel" required="required">
+          <option *ngFor="let country of countryData" [value]="country.capital">{{country.capital}}
+          </option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-xs-4">City</label>
+      <div class="col-xs-8">
+        <select name="filter" class="form-control" [(ngModel)]="model.city" #city="ngModel" required="required">
+          <option *ngFor="let country of countryData" [value]="country.name">{{country.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+
 <div class="form-group">
   <label class="control-label col-xs-4">Picture</label>
     <div class="col-xs-8">
@@ -26,7 +61,7 @@
     </div>
 <div class="form-group">
   <label for="experience">Your Experience</label>
-  <textarea class="form-control"  name="experience" [(ngModel)]="model.experience" #experience="ngModel" rows="20"></textarea>      	
+  <textarea class="form-control"  name="experience" [(ngModel)]="model.experience" #experience="ngModel" rows="20" required="required" ></textarea>      	
 </div>
 
 <div class="form-group">
