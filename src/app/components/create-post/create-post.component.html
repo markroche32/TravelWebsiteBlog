@@ -24,7 +24,7 @@
     <div class="form-group">
       <label class="control-label col-xs-4">Continent</label>
       <div class="col-xs-8">
-        <select name="filter" class="form-control"  [(ngModel)]="model.continentGlob" #continentGlob="ngModel" required="required">
+        <select name="filter" class="form-control" (change)="continentChanged($event.target.value)" [(ngModel)]="model.continentGlob" #continentGlob="ngModel" required="required">
           <option *ngFor="let region of continent" [value]="region">{{region}}
           </option>
         </select>
@@ -35,8 +35,8 @@
     <div class="form-group">
       <label class="control-label col-xs-4">Country</label>
       <div class="col-xs-8">
-        <select name="filter" class="form-control" [(ngModel)]="model.country" #country="ngModel" required="required">
-          <option *ngFor="let country of countryData" [value]="country.capital">{{country.capital}}
+        <select name="filter" class="form-control" (change)="countryChanged($event.target.value)" [(ngModel)]="model.country" #country="ngModel" required="required">
+          <option *ngFor="let country of tempCountryData" [value]="country.name">{{country.name}}
           </option>
         </select>
       </div>
@@ -45,8 +45,8 @@
     <div class="form-group">
       <label class="control-label col-xs-4">City</label>
       <div class="col-xs-8">
-        <select name="filter" class="form-control" [(ngModel)]="model.city" #city="ngModel" required="required">
-          <option *ngFor="let country of countryData" [value]="country.name">{{country.name}}
+        <select name="filter" class="form-control" (change)="cityChanged($event.target.value)" [(ngModel)]="model.city" #city="ngModel" required="required">
+          <option *ngFor="let country of tempCityData" [value]="country.capital">{{country.capital}}
           </option>
         </select>
       </div>

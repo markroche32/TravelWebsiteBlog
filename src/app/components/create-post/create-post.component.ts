@@ -14,7 +14,9 @@ import { LoaderService } from '../../services/loader.service';
 export class CreatePostComponent implements OnInit {
 
   continent: any = [];
-  countryData: any;
+  countryData: any[];
+  tempCountryData: any[];
+  tempCityData: any[];
   model: any = {};
   posts: Post[];
   newPost: Post;
@@ -29,6 +31,7 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() {
 
+    //this.model.continentGlob = null;
     this.postService.getPosts().subscribe(
       posts => this.posts = posts,
       error => console.log(error)
@@ -42,6 +45,8 @@ export class CreatePostComponent implements OnInit {
       data => {
         console.log(data);
         this.countryData = data;
+        this.tempCountryData = this.countryData;
+        this.tempCityData = this.countryData;
         this.uniqueContinent(data);
       },
       error => {
@@ -71,6 +76,9 @@ export class CreatePostComponent implements OnInit {
     this.post.title = this.model.title;
     this.post.destination = this.model.destination;
     this.post.experience = this.model.experience;
+    this.post.continent = this.model.continentGlob;
+    this.post.country = this.model.country;
+    this.post.city = this.model.city;
 
     this.postService.savePost(this.post, this.selectedFile).subscribe(
       newPost => {
@@ -104,6 +112,72 @@ export class CreatePostComponent implements OnInit {
         this.continent.includes(element.continent) ? null : this.continent.push(element.continent);
       }
     });
+
+  }
+
+  optionChanged(selectedValue:string) {
+        
+    console.log('optionChanged is ', selectedValue);
+
+    this.countryData  = this.countryData.filter(p => 
+
+      p.continent == selectedValue || p.name == selectedValue || p.capital == selectedValue
+
+    );
+  
+    console.log("New Counrty Data : ", this.countryData);
+  }
+
+
+
+  continentChanged(selectedValue:string) {
+    
+    console.log('continentChanged is ', selectedValue);
+    this.tempCountryData = this.countryData;
+    this.tempCityData = this.countryData;
+
+    this.tempCountryData  = this.tempCountryData.filter(p => 
+      p.continent == selectedValue
+    );
+
+
+    this.tempCityData  = this.tempCityData.filter(p => 
+      p.continent == selectedValue
+    );
+
+    console.log("New Counrty Data : ", this.tempCountryData);
+
+  }
+
+
+  countryChanged(selectedValue:string) {
+    
+    console.log('countryChanged is ', selectedValue);
+    this.tempCityData = this.countryData;
+
+    //Case : Continent Has Been Selected Changed ; this.continent != null
+    this.tempCityData  = this.tempCityData.filter(p => 
+      p.name == selectedValue 
+    );
+
+
+    //Case : Continent Has NOT Been Selected Changed ; this.continent == null
+    
+    console.log("New Counrty Data : ", this.tempCountryData);
+
+  }
+
+  cityChanged(selectedValue:string) {
+    
+    console.log('cityChanged is ', selectedValue);
+
+    /* this.countryData  = this.countryData.filter(p => 
+
+      p.continent == selectedValue || p.name == selectedValue || p.capital == selectedValue
+
+    ); */
+
+    console.log("New Counrty Data : ", this.tempCountryData);
 
   }
 
